@@ -25,15 +25,11 @@ public class Product {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
+	public static void staticPriceUpdate(Product p) {
+		p.setPrice(p.getPrice() * 1.1);
+	}
 
-	public static boolean staticProductPredicate(Product p) {
-		return p.getPrice() >= 100.0;
-	}
-	
-	public boolean nostaticProductPredicate() {
-		return price >= 100.0;
-	}
-	
 	@Override
 	public String toString() {
 		return "Product Name= " + name + " | Price= R$" + String.format("%.2f", price);
